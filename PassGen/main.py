@@ -35,7 +35,7 @@ class App(QWidget):
         for i in range(self.main_menu.spinBox.value()):
             gen_out += random.choice(gen_pass_list)
 
-        self.main_menu.textBrowser.setText(f"\t\tВаш пароль\n {gen_out}\n{'='*45}")
+        self.main_menu.textBrowser.setText(f"\t\tВаш пароль\n {gen_out}")
 
 
     def Button(self):

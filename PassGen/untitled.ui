@@ -62,6 +62,13 @@ background-color: qradialgradient(spread:repeat, cx:0.5, cy:0.5, radius:0.077, f
      <height>101</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
    <property name="styleSheet">
     <string notr="true">background-color: rgb(255, 255, 255);</string>
    </property>
