@@ -10,13 +10,15 @@ import random
 text = "1234567890qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM"
 
 def d(hash_form,hash,text):
-    h = hashlib.new(hash_form)
     k = hash
     for i in range(1, len(text)):
         for g in tqdm(itertools.combinations("".join(random.sample(text, len(text))), i)):
-            if k == h.update(b"{g}") :
-                print(g)
-                break
+            h = hashlib.new(hash_form)
+            g1 = bytes(''.join(g), 'utf-8')
+            h.update(g1)
+            if k == h.hexdigest():
+                return str(g1)[1:]
+
         text *= i
 
 
@@ -32,14 +34,15 @@ class App(QWidget):
 
     def encode(self):
         h = hashlib.new(self.main_menu.comboBox.currentText())
-        h.update(b"self.main_menu.textEdit.toPlainText()")
+        k = bytes(self.main_menu.textEdit.toPlainText(),'utf-8')
+        h.update(k)
         self.main_menu.textBrowser_2.setText(h.hexdigest())
 
 
     def decode(self):
         hash = self.main_menu.textEdit_2.toPlainText()
         hash_form = self.main_menu.comboBox_2.currentText()
-        d(hash_form,hash,text)
+        self.main_menu.textBrowser_2.setText(d(hash_form,hash,text))
 
 
     def Button(self):
