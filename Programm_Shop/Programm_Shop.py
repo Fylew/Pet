@@ -7,6 +7,7 @@ class App(QWidget):
         self.start()
         self.Button()
 
+        self.main_menu.spinBox.setMaximum(1000000)
 
     def start(self):
         self.main_menu = uic.loadUi("untitled.ui")
