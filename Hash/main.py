@@ -7,6 +7,7 @@ import math
 import time
 from tqdm import tqdm
 import random
+
 text = "1234567890qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM"
 
 def d(hash_form,hash,text):
