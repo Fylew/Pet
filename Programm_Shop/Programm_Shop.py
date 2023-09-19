@@ -111,7 +111,6 @@ class App(QWidget):
             else:
                 itog[name] += count
 
-        print(itog)
         itog["Замок"] += count
         itog["Протектор"] += 2 * count
 
